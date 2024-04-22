@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./login.css">
+    <script src="../controller.js"></script>
+    <div class="container text-center">        
+        <p><img class="logo" src="../../assets/Logo11.png"/></p> 
+        <div class="call_number"><img src="../../assets/email.png" class="email_img"/> support@teamcode.com  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; <img src="../../assets/viber.png" class="email_img"/> +91 94444 44444</div>
+        <div class="second_header">
+            
+            <div class="row">
+                <div class="col-sm-6">
+                    <img src="../../assets/login_img1.png" class="login_img"/>
+                </div>
+                <div class="col-sm-6">
+
+           <div class="login_page">
+                <div class="form_outline"><br>                    
+                    <div class="login_name">Student Login</div><br><br>
+                    <input type="text" class="login_input" name="username" id="username" placeholder="Enter username"><br><br><br>
+                    <input type="password" class="login_input" name="password" id="psd" placeholder="Enter password"><br><br><br><br>
+                    <button id="login" onclick="login_page()">Login</button><br><br>
+                    <div class="confirm_msg" id="confirm_msg"></div>
+                    <input type="checkbox" class="input_checkbox"/> <div class="remember_me">Remember Me </div><div class="forget_psd"><a href="../forget_psd/forget_psd.html" class="a_create_one">Forget Password? </a></div>
+                <div class="dont_have_account">Don't have an account?</div><div class="create_one"><a href="../register/register.html" class="a_create_one">Create One</a></div>
+               
+            </div>                                    
+            <div class="social_media_container">
+                <img src="../../assets/facebook.png" class="social_media_imgs"/>
+                <img src="../../assets/instagram.png" class="social_media_imgs"/>
+                <img src="../../assets/twitter.png" class="social_media_imgs"/>                    
+            </div>
+            <div class="footer">@2022 TeamCode Technologies. All Rights Reserved.</div>
+
+           
+            
+        </div>
+        </div></div></div>
+        </div>
+    </div>
+    </div>
+
+</head>
+
+
+
+<body onload="cleardata()">
+    <script>
+        function login_page()
+        {
+            let username = document.getElementById("username").value;
+                let psd = document.getElementById("psd").value;
+                let loginpage = new login();
+                loginpage.login_page(username, psd);
+                sessionStorage.setItem("stu_login",username);
+    
+            // window.location.href="./login.html";
+        }
+
+        function cleardata()
+        {
+            document.getElementById("username").value = "";
+            document.getElementById("psd").value = "";
+        }
+    </script>
+</body>
+
+</html>

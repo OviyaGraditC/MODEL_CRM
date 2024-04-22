@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./forget_psd.css">
+    <script src="../staff_controller.js"></script>
+    <div class="container text-center">
+        <p><img class="logo" src="../../assets/Logo11.png"/></p> 
+        <div class="call_number"><img src="../../assets/email.png" class="email_img" /> support@teamcode.com &nbsp; &nbsp;
+            &nbsp; &nbsp;&nbsp;&nbsp; <img src="../../assets/viber.png" class="email_img" /> +91 94444 44444</div>
+        <div class="second_header">
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <img src="../../assets/login_img1.png" class="login_img" />
+                </div>
+                <div class="col-sm-6">
+
+                    <div class="login_page">
+                        <div class="form_outline"><br>
+                            <div class="register_heading">Staff Reset Password</div><br><br>
+                            <input type="text" class="login_input" name="forget_psd_username" id="forget_psd_username"
+                                placeholder="Enter your username"><br><br><br>
+                            <button id="login" onclick="forget_psd()">Reset Password</button> <br><br>
+                            <div class="forgetpsd_confirm_msg" id="forgetpsd_confirm_msg"></div>
+                        </div>
+                        <div class="social_media_container">
+                            <img src="../../assets/facebook.png" class="social_media_imgs" />
+                            <img src="../../assets/instagram.png" class="social_media_imgs" />
+                            <img src="../../assets/twitter.png" class="social_media_imgs" />
+                        </div>
+                        <div class="footer">@2022 TeamCode Technologies. All Rights Reserved.</div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+
+</head>
+
+<body>
+    <script>
+
+        function forget_psd() {
+            let forget_psd_username = document.getElementById("forget_psd_username").value;
+            // alert("success");
+            let reset_psd = new forget_pswd();
+            reset_psd.check_username(forget_psd_username);
+
+        }
+    </script>
+</body>
+
+</html>

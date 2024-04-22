@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <div class="container text-center">
+        <p><img class="logo" src="./assets/Logo11.png" /></p>
+        <div class="call_number"><img src="./assets/email.png" class="email_img" /> support@teamcode.com &nbsp;
+            &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; <img src="./assets/viber.png" class="email_img" /> +91 94444 44444
+        </div>
+        <div class="second_header">
+            <div class="row">
+                <div class="login_page">
+                    <div class="form_outline"><br>
+                        <div class="login_name mb-4">Staff Login</div><br><br><br><br><br>
+                            <select class="login_input" name="user_type" id="user_type" placeholder="Course">
+                                <option value="" disabled selected hidden>User Type</option>
+                                <option value="Student">Student</option>
+                                <option value="Staff">Staff</option>
+                                <option value="Admin">Admin</option>
+                            </select><br><br><br>
+                        <div class="confirm_msg" id="admin_psd"></div>
+                        <button type="button" id="login_page">Login</button>
+                        <br><br><div class="confirm_msg" id="confirm_msg"></div>    
+                        <div class="social_media_container">
+                            <img src="./assets/facebook.png" class="social_media_imgs" />
+<<<<<<< HEAD
+                            <img src="./../assets/instagram.png" class="social_media_imgs" />
+=======
+                            <img src="./assets/instagram.png" class="social_media_imgs" />
+>>>>>>> 4a7cdbb54804345f602829a67d70db94502c9e83
+                            <img src="./assets/twitter.png" class="social_media_imgs" />
+                        </div>
+                        <div class="footer">@2022 TeamCode Technologies. All Rights Reserved.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <script>       
+const element = document.getElementById("login_page");
+let admin_btn = true;
+element.addEventListener('click', function (event) { 
+let usertype = document.getElementById("user_type").value;
+
+  if (admin_btn) {
+    login_btn_index()
+    admin_btn = !admin_btn ;
+  } else {
+    login_btn_admin()
+  }
+
+function login_btn_index() {    
+    if (usertype == "Student") {
+        console.log("success");
+                    window.location.href = "../stu_credentials/login/login.html";
+                }
+                else if (usertype == "Staff") {
+                    window.location.href = "./staff_credentials/login/login.html";
+                }
+                else {
+                    
+                    let admin_psd = '<input type="password" class="login_input" name="admin_psd_new" id="admin_psd_new" placeholder="idno"><br><br>';
+                    document.getElementById('admin_psd').innerHTML = admin_psd;
+                }   
+}
+
+function login_btn_admin() 
+{  
+                let admin_check_psd = document.getElementById("admin_psd_new").value;
+                if (admin_check_psd == "admin123") {
+                    sessionStorage.setItem("admin_login",admin_check_psd);
+                    window.location.href = "./dashboard/dashboard.html";
+                }
+                else{
+                    document.getElementById("confirm_msg").innerHTML="Incorrect Password";
+                }
+}
+});
+        //     let admin_btn = false;
+        //     let user_type = document.getElementById("user_type").value;
+        //     if (admin_btn) {
+
+        //         console.log("success");
+        //         let admin_check_psd = document.getElementById("admin_psd_new").value;
+        //         if (admin_check_psd == "admin123") {
+        //             window.location.href = "./dashboard/dashboard.html";
+        //         }
+        //         else{
+        //             document.getElementById("confirm_msg").innerHTML="Incorrect Password";
+        //         }
+        //     }
+        //     else
+        //     {
+        //         if (user_type == "Student") {
+        //             window.location.href = "../stu_credentials/login/login.html";
+        //         }
+        //         else if (user_type == "Staff") {
+        //             window.location.href = "./staff_credentials/login/login.html";
+        //         }
+        //         else {
+                    
+        //             admin_btn = true;
+        //             let admin_psd = '<input type="password" class="login_input" name="admin_psd_new" id="admin_psd_new" placeholder="idno"><br><br>';
+        //             document.getElementById('admin_psd').innerHTML = admin_psd;
+        //         }
+        //     }
+        // }
+    </script>
+</body>
+
+</html>

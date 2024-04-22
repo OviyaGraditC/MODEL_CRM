@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./dashboard.css">
+    <script src="./controller.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</head>
+
+<body onload="checkSession()">
+    <div class="container text-center">
+
+        <img class="logo" src="../assets/Logo11.png" />
+        <div class="call_number"><img src="../assets/email.png" class="email_img" /> support@teamcode.com &nbsp; &nbsp;
+            &nbsp; &nbsp;&nbsp;&nbsp; <img src="../assets/viber.png" class="email_img" /> +91 94444 44444 <a href="../admin_logout.html" class="btn btn-primary btn_logoff"> LogOff </a></div>
+
+
+        <div class="dashboard_content">
+            <button onclick="window.location.href= '../leads/leads/leads.html';"  class="leads_box"> Leads<img class="icon" src="../assets/icon1.svg" /></button>
+            <button onclick="window.location.href='../stu_credentials/registered_stu_data/registered_stu_data.html';" target="_blank" class="leads_box"> Student data<img class="icon" src="../assets/icon2.svg" /></button>
+            <button onclick="window.location.href='../staff_credentials/registered_staff_data/registered_staff_data.html';" target="_blank" class="leads_box"> Staff data<img class="icon" src="../assets/icon3.svg" /></button>
+            <button onclick="window.location.href='../staff_credentials/staff_home_page/staff_home_page.html';" target="_blank" class="leads_box"> Mgmt data<img class="icon" src="../assets/icon4.svg" /></button>            
+        </div>
+<div class="dashboard_lower_button">
+    <button onclick="window.location.href='../stu_credentials/register/register.html';" target="_blank" class ="leads_box_down_button">Register Student</button>
+    <button onclick="window.location.href='../staff_credentials/register/register.html';" target="_blank"  class="leads_box_down_button">Register Staff</button>
+    <button onclick="window.location.href='../leads/leads_register_form/leads_register_form.html';" target="_blank"  class="leads_box_down_button">Add New Lead</button>
+</div>
+</body>
+
+<script>
+     function checkSession(){
+            let user = sessionStorage.getItem('admin_login');
+            console.log(user);
+            if(user == null){
+                window.location.href="../index.html";
+            }
+        }
+</script>
+</html>
