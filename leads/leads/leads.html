@@ -24,7 +24,7 @@
         <div class="second_header">
             <div class="col" id="updateAccBtn">
                 <div class="col" id="addAccBtn"><button type="button" class="btn btn-success button_top"
-                        onclick="add_lead()">Add New Lead</button>
+                        onclick="add_leads_inside()">Add New Lead</button>
                 </div>
             </div>
             <div id="update_columns" class="update_columns"></div>
@@ -37,6 +37,12 @@
     </div>
 </body>
 <script>
+
+function add_leads_inside()
+    {
+    window.location.href = "../leads_register_form/leads_register_form.html";
+}
+    
     get_registered_stu_details();
 
     function checkSession() {

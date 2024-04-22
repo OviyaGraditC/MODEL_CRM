@@ -71,9 +71,10 @@ body {
 
 .call_number
 {
+    font-size: smaller;
     text-align: right;
     margin-top: 20px;
-    margin-right: -224px;
+    margin-right: -161px;
     color:#767474;
 }
 .dont_have_account
@@ -143,7 +144,7 @@ opacity: 40%;
 {
     box-shadow: 3px 3px 3px #b1b1b1, -3px -3px 3px #fff;
     border: none;
-    width: 424px;
+    width: 352px;
     height: 76px;
     background-color: aliceblue;
     padding-left: 38px;
@@ -226,7 +227,7 @@ font-size: large;
 button
 {
     line-height: inherit;
-    width: 430px;
+    width: 354px;
     height: 74px;
     border: none;
     border-radius: 7px;
