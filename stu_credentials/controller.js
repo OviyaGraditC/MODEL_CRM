@@ -308,7 +308,7 @@ function delete_registered_stu_details(del_id) {
 }
 
 function create_account() {
-    window.location.href = "./register/register.html";
+    window.location.href = "../register/register.html";
 }
 
 function update_registered_stu_details() {
