@@ -178,7 +178,7 @@ class login {
                     accounts = data;
                     
                     let account_data = "";
-                    
+                    sessionStorage.setItem("login_user", username);
                     account_data = accounts.filter((account) => { return account.username == username });
                     
                     if (account_data && account_data.length == 0) {

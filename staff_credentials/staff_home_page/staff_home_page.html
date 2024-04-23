@@ -29,7 +29,7 @@
 </body>
 <script>
     function checkSession(){
-            let user = sessionStorage.getItem('staff_login');
+            let user = sessionStorage.getItem('login_user');
             console.log(user);
             if(user == null){
                 window.location.href="../../staff_credentials/login/login.html";
