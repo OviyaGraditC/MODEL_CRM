@@ -21,8 +21,8 @@
         <div class="second_header">
             <div class="row">
                 <div class="login_page">
-                    <div class="form_outline"><br>
-                        <div class="login_name mb-4">Staff Login</div><br><br><br><br><br>
+                    <div class="form_outline"><br><br>
+                        <div class="login_name mb-4 pt-4 h2">Login</div><br>
                             <select class="login_input" name="user_type" id="user_type" placeholder="Course">
                                 <option value="" disabled selected hidden>User Type</option>
                                 <option value="Student">Student</option>
@@ -70,7 +70,7 @@ function login_btn_index() {
                 }
                 else {
                     
-                    let admin_psd = '<input type="password" class="login_input" name="admin_psd_new" id="admin_psd_new" placeholder="idno"><br><br>';
+                    let admin_psd = '<input type="password" class="login_input" name="admin_psd_new" id="admin_psd_new" placeholder="Password"><br><br>';
                     document.getElementById('admin_psd').innerHTML = admin_psd;
                 }   
 }
