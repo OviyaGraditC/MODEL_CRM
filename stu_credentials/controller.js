@@ -249,8 +249,9 @@ class RegisterDetails {
                                 })
                                 .then((data) => {
                                     console.log(data);
-
                                     alert("Account Added.. : " + data.id);
+                                    document.getElementById("confirm_msg").innerHTML="Automatically Page will be redirected to Login Page"
+                                    setInterval(()=>{window.location.href="../login/login.html"}, 3000);
                                 })
                             document.getElementById("confirm_msg").innerHTML = "User Registeration Successful..!! ";
                             document.getElementById("username").value = "";

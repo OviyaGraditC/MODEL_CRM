@@ -147,6 +147,7 @@ body {
     font-size: 20px;
     align-items:self-end;
     justify-content: end;
+    margin-top: -58px;
 }
 .dont_have_account
 {

@@ -298,6 +298,8 @@ class RegisterDetails {
                 })
                 .then((data) => {
                   alert("Account Added.. : " + data.id);
+                  document.getElementById("confirm_msg").innerHTML="Automatically Page will be redirected to Login Page"
+                  setInterval(()=>{window.location.href="../login/login.html"}, 3000);
                   console.log(data);
                 });
               document.getElementById("confirm_msg").innerHTML =
