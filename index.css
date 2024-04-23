@@ -44,7 +44,6 @@ body {
 .col-sm-6 {
     width: 45%;
     display: flex;
-    /* justify-content: center; */
     right: 241px;
 }
 
@@ -59,7 +58,6 @@ body {
 {
     width: 24px;
     height: 26px;
-    /* display: flex; */
     justify-content: right;
     margin-right: 7px;
 }
@@ -82,8 +80,6 @@ body {
     color: #767474;
     display: inline-block;
     position: relative;
-    /* display: flex; */
-    /* justify-content: left; */
     top: 20px;
     left: 4px;
     font-size: 17px;
@@ -95,8 +91,6 @@ body {
     position: relative;
     display: inline-block;
     position: relative;
-    /* display: flex; */
-    /* justify-content: center; */
     top: 20px;
     left: 10px;
     font-size: 17px;

@@ -1,17 +1,6 @@
-
-
 var tempAccDB = [];
 var accounts = [];
 var accountIdForUpdate = "";
-
-
-
-// function setdb() {
-
-//     sessionStorage.setItem("login_details", userdb);
-// }
-
-
 
 function registerUser() {
 
@@ -22,55 +11,13 @@ function registerUser() {
     let confirm_msg = document.getElementById("confirm_msg").value
     let register_user = new RegisterDetails();
     register_user.check_details(username, psd, cfmpsd);
-
-    // window.location.href="./login.html";
 }
-
-// function getdb_username() {
-
-//     let dbstr = sessionStorage.getItem("login_details");
-//     let login_details = dbstr.split("/");
-
-//     for (let userarr of login_details) {
-//         let splited_db = userarr.split(",");
-//         userdb.push(splited_db);
-//         console.log(userdb);
-//     }
-// }
-// let forgetpsd_confirm_msg = document.getElementById("forgetpsd_confirm_msg");
-
-
 
 function resetData(username, psd, cfmpsd) {
     username = "";
     psd = "";
     cfmpsd = "";
 }
-
-// class forget_pswd {
-//     check_username(forget_psd_username) {
-//         getdb_username();
-//         let username_equals = false;
-
-//         if (forget_psd_username !== "") {
-//             for (let user of userdb) {
-//                 if (user[0] == forget_psd_username) {
-//                     username_equals = true;
-
-//                 }
-
-//                 if (username_equals)
-//                     window.location.href = "../reset_psd/reset_psd.html";
-//                 else
-//                     document.getElementById("forgetpsd_confirm_msg").innerHTML = "Error : Data Not Found..!";
-//             }
-
-//         } else {
-//             document.getElementById("forgetpsd_confirm_msg").innerHTML = "Error : Enter username";
-//         }
-//         // forgetpsd_confirm_msg.innerHTML= "Error : Enter username..";
-//     }
-// }
 
 function reset_psd_page(forget_psd_username) {
     let username = sessionStorage.getItem("forgetpsd_username");
@@ -112,7 +59,7 @@ function forget_pswd_get_registered_details(forget_psd_username) {
 
                     if (username_equals) {
                         document.getElementById("forgetpsd_confirm_msg").innerHTML = "";
-                        window.location.href = "../reset_psd/reset_psd.html";
+                        window.location.href = "./reset_psd/reset_psd.html";
                     }
                     else
                         document.getElementById("forgetpsd_confirm_msg").innerHTML = "Error : Data Not Found..!";
@@ -139,27 +86,7 @@ class forget_pswd {
     }
 }
 
-// let userdb = [];
-
-
-// function setdb() {
-//     sessionStorage.setItem("login_details", userdb);
-// }
-
-// function getdb_username() {
-
-//     let userdb = sessionStorage.getItem("login_details");
-//     let login_details = userdb.split("/");
-
-//     // for (let userarr of login_details) {
-//     //     let splited_db = userarr.split(",");
-//         userdb.push(login_details);
-//         console.log(userdb);
-//     // }
-// }
-
 function reset_get_registered_details() {
-
 
     fetch("https://retoolapi.dev/5Pzpcy/student_login", {
         "method": "GET",
@@ -194,9 +121,7 @@ function reset_get_registered_details() {
             console.log(data);
 
             alert("Account Added.. : " + username);
-            // get_registered_stu_details();
         })
-
 }
 
 function reset_psd(username, psd, cfmpsd) {
@@ -240,30 +165,6 @@ function reset_psd(username, psd, cfmpsd) {
                 document.getElementById("resetpsd_confirm_msg").innerHTML = "Error: Password and confirm password doesn't match..!";
         })
 }
-// else
-//             document.getElementById("resetpsd_confirm_msg").innerHTML = "Error : Fill all the columns..";
-
-
-
-
-
-
-// class login {
-//     login_page(username, psd) {
-//         if (username !== "" && psd !== "") {
-//             getdb_username();
-//             if (userdb[0][0] == username && userdb[0][1] == psd) {
-//                 window.location.href = "../dashboard_home/dashboard_home.html";
-//             }
-//             else
-//                 document.getElementById("confirm_msg").innerHTML = "Username or Passoword is Incorrect";
-//         }
-
-//         else
-//             document.getElementById("confirm_msg").innerHTML = "Error: Fill all the fields";
-//     }
-// }
-
 
 class login {
     login_page(username, psd) {
@@ -287,7 +188,7 @@ class login {
                     else if (account_data[0].username == username && account_data[0].psd == psd) {
                         window.location.href = "../student_home_page/student_home_page.html";
                     } else
-                        document.getElementById("confirm_msg").innerHTML = "Error: Data Not Found..!";                
+                        document.getElementById("confirm_msg").innerHTML = "Error: Data Not Found..!";          
                 })
         }
         else
@@ -304,7 +205,6 @@ class RegisterDetails {
             .then((response) => { return response.json(); })
             .then((data) => {
                 accounts = data;
-                // displayData(accounts);
                 console.log(accounts);
                 console.log(username);
 
@@ -351,7 +251,6 @@ class RegisterDetails {
                                     console.log(data);
 
                                     alert("Account Added.. : " + data.id);
-                                    // get_registered_stu_details();
                                 })
                             document.getElementById("confirm_msg").innerHTML = "User Registeration Successful..!! ";
                             document.getElementById("username").value = "";
@@ -396,7 +295,6 @@ function delete_registered_stu_details(del_id) {
 
 
     console.log("Success");
-    // del_id = document.getElementById("to_delete").value;
     fetch('https://retoolapi.dev/5Pzpcy/student_login/' + del_id, {
         method: 'DELETE',
         "headers": { "content-type": "application/json;charset=utf-8" }
@@ -410,7 +308,7 @@ function delete_registered_stu_details(del_id) {
 }
 
 function create_account() {
-    window.location.href = "../register/register.html";
+    window.location.href = "./register/register.html";
 }
 
 function update_registered_stu_details() {
@@ -451,8 +349,6 @@ function getInputs() {
 }
 
 function getInputs_reset() {
-    // console.log("in getinputs");
-    // username = document.getElementById('reset_username');
 
     let reset_psd = document.getElementById('reset_psd');
     let cf_psd = document.getElementById('reset_cfmpsd');
@@ -466,12 +362,10 @@ function update_column_resetData() {
 
 function updateAccount(accountId) {
     get_registered_stu_details();
-    // document.getElementById('updateAccBtn').style.display = "none";
     let update_columns = '<input type="text" class="update_login_input" name="idno" id="update_idno" placeholder="idno" readonly><input type="text" class="update_login_input" name="username" id="update_username" placeholder="Enter username"><input type="text" class="update_login_input" name="psd" id="updated_psd" placeholder="Enter password"><button id="update_psd" class="btn btn-success button_top1" onclick="updateAcc()">Update</button>'
     document.getElementById('update_columns').innerHTML = update_columns;
     getInputs();
     let account = accounts.filter((account) => { return account.id == accountId })[0];
-    // console.log(account.psd);
     accountIdForUpdate = account.id;
     update_idno.value = accountId;
     update_username.value = account.username;
@@ -525,6 +419,4 @@ function displayData(accounts) {
     document.getElementById('accounts').innerHTML = '<div class="update_column_box">' + result + '</div>';
 
     get_registered_details();
-
-    // return '<div class="update_column_box">' + result + '</div>';
 }

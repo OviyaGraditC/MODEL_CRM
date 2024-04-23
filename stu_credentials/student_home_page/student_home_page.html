@@ -16,11 +16,11 @@
 <body onload="checkSession()">
     <p><img class="logo" src="../../assets/Logo11.png"/></p> 
     <div class="call_number"><img src="../../assets/email.png" class="email_img"/> <p style="font-size: 20px;">support@teamcode.com</p>  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; <img src="../../assets/viber.png" class="email_img"/> <p style="font-size: 20px;">+91 94444 44444</p></div>
-    <div class="col"><a href="../../stu_credentials/stu_logout.html" class="btn btn-primary btn_logoff"> LogOff </a></div>
+    <div class="col"><a href="../stu_credentials/stu_logout.html" class="btn btn-primary btn_logoff"> LogOff </a></div>
     <h3 style="text-align: center; margin-top: -22px;">Student home page</h3>
    <div class="main_container"> <img src="../../assets/schedule1.jpg" class="student_dashboard_schedule_img"></div>  
 </body>
-<script>
+<script>    
     function checkSession(){
             let user = sessionStorage.getItem('stu_login');
             console.log(user);
